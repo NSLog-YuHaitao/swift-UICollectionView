@@ -38,19 +38,19 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     //MARK:创建collectionView
     func createCollectionView() -> Void {
         
-        layout = UICollectionViewFlowLayout.init()
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
-        layout.itemSize = CGSize.init(width: 100, height:130)
+        layout = UICollectionViewFlowLayout.init()//初始化UICollectionViewFlowLayout
+        layout.minimumLineSpacing = 10//垂直最小距离
+        layout.minimumInteritemSpacing = 10//水平最小距离
+        layout.itemSize = CGSize.init(width: 100, height:130)//item的大小
         
-        collectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: width, height: height), collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.white
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.dataSource = self
+        collectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: width, height: height), collectionViewLayout: layout)//初始化UICollectionView
+        collectionView.backgroundColor = UIColor.white//背景色
+        collectionView.showsVerticalScrollIndicator = false//去除垂直滚动条
+        collectionView.showsHorizontalScrollIndicator = false//去除水平滚动条
+        collectionView.dataSource = self//代理方法
         collectionView.delegate = self
-        self.view.addSubview(collectionView)
-        collectionView.register(picCollectionViewCell.classForCoder() ,forCellWithReuseIdentifier: "cellID")
+        self.view.addSubview(collectionView)//添加主视图
+        collectionView.register(picCollectionViewCell.classForCoder() ,forCellWithReuseIdentifier: "cellID")//注册cell
         
     }
     
